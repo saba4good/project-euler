@@ -1,0 +1,19 @@
+'''
+Problem 7.
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+What is the 10,001st prime number?
+'''
+DESIGNATED_INDEX_NUMBER = 10001
+prime_index=2; n=3
+while(prime_index<=DESIGNATED_INDEX_NUMBER):
+    n_is_indivisible=1
+    i=2
+    maximum=n**(0.5)
+    while(n_is_indivisible and i<=maximum):
+        n_is_indivisible = n%i
+        i+=1
+    if(n_is_indivisible):
+        prime_index+=1
+    n+=2
+print("The",prime_index-1,"st prime number is",n-2)
